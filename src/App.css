@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-image: linear-gradient( to left, #3C8CE7 10%, #00c9db 100%);
+  font-family: 'Calibri';
+}
+
+h1 {
+  font-size: 64px;
+  color: white;
+}
+
+.submit, .delete {
+  border: none;
+  background: transparent;
+  font-size: 40px;
+  cursor: pointer;
+  outline: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.submit:hover, .delete:hover {
+  color: white;
+}
+
+.submit:disabled {
+  color: rgba(206, 206, 206, 0.7);
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+  color: #ffffff;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: rgba(255,255,255,0.3);
+  padding: 16px 10px;
+  font-size: 24px;
+}
+
+.table-header {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.table-content {
+  border: 1px solid rgba(255,255,255,0.5);
+  border-top: 0;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.table-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table-content::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1); 
+}
+
+.table-content::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+}
+
+.table-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.4); 
+}
+
+td {
+  padding: 10px;
+}
+
+.table-content tr:not(:last-of-type) {
+  border-bottom: solid 1px rgba(255,255,255,0.2);
+}
+
+.table-content tr:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+input[type='text'] {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: inherit;
+  padding: 5px 0;
+  width: 100%;
+}
+
+input[type='text']+span {
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all ease-in-out 0.4s;
+}
+
+input[type='text']:focus+span {
+  width:100%;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+:-ms-input-placeholder {
+ color: rgba(255, 255, 255, 0.7);;
+}
+
+::-ms-input-placeholder {
+ color: rgba(255, 255, 255, 0.7);;
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+input[value='male']::after {
+  font-family: 'FontAwesome';
+  content: '\f183';
+}
+
+input[value='female']::after {
+  font-family: 'FontAwesome';
+  content: '\f182';
+}
+
+input[type='radio']::after {
+  color: #ffffffe6;
+  font-size: 30px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type='radio']:checked::after {
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.2);
+  color: rgba(41, 53, 134, 0.8);
+  transition: box-shadow 0.5s, color 0.5s;
+}
+
+.table-content tr:active {
+  background-color: rgba(255,255,255,0.1);
+}
