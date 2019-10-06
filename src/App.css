@@ -9,8 +9,10 @@ html {
 
 body {
   height: 100%;
-  background-image: linear-gradient( to left, #3C8CE7 10%, #00c9db 100%);
+  background-image: linear-gradient(to left, #3C8CE7 0%, #00c9db 100%);
   font-family: 'Calibri';
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
@@ -18,26 +20,26 @@ h1 {
   color: white;
 }
 
-.submit, .delete {
+button {
   border: none;
   background: transparent;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
   outline: none;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.submit:hover, .delete:hover {
+button:hover {
   color: white;
 }
 
-.submit:disabled {
+.add-row:disabled {
   color: rgba(206, 206, 206, 0.7);
+  cursor: default;
 }
 
 table {
   width: 100%;
-  table-layout: fixed;
   text-align: center;
   color: #ffffff;
   border-collapse: collapse;
@@ -49,30 +51,30 @@ th {
   font-size: 24px;
 }
 
-.table-header {
+thead {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.table-content {
+tbody {
   border: 1px solid rgba(255,255,255,0.5);
   border-top: 0;
   overflow-y: auto;
   max-height: 400px;
 }
 
-.table-content::-webkit-scrollbar {
+tbody::-webkit-scrollbar {
   width: 6px;
 }
 
-.table-content::-webkit-scrollbar-track {
+tbody::-webkit-scrollbar-track {
   background: rgba(0,0,0,0.1); 
 }
 
-.table-content::-webkit-scrollbar-thumb {
+tbody::-webkit-scrollbar-thumb {
   background: rgba(0,0,0,0.2);
 }
 
-.table-content::-webkit-scrollbar-thumb:hover {
+tbody::-webkit-scrollbar-thumb:hover {
   background: rgba(0,0,0,0.4); 
 }
 
@@ -80,11 +82,11 @@ td {
   padding: 10px;
 }
 
-.table-content tr:not(:last-of-type) {
+tbody tr:not(:last-of-type) {
   border-bottom: solid 1px rgba(255,255,255,0.2);
 }
 
-.table-content tr:hover {
+tbody tr:hover {
   background-color: rgba(255,255,255,0.1);
 }
 
@@ -124,7 +126,7 @@ input[type='text']:focus+span {
  color: rgba(255, 255, 255, 0.7);;
 }
 
-input[type='radio'] {
+input[type='checkbox'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
@@ -133,30 +135,91 @@ input[type='radio'] {
   outline: none;
 }
 
-input[value='male']::after {
-  font-family: 'FontAwesome';
-  content: '\f183';
+input[type='checkbox']::after {
+  font-size: 30px;
+  padding: 8px;
+  cursor: pointer;
 }
 
-input[value='female']::after {
+input[type='checkbox']::after {
+  color: #ffffffe6;
+  transition: color 0.4s ease-in-out;
   font-family: 'FontAwesome';
   content: '\f182';
 }
 
-input[type='radio']::after {
-  color: #ffffffe6;
-  font-size: 30px;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+input[type='checkbox']:checked::after {
+  color: #007599;
+  transition: color 0.4s ease-in-out;
+  font-family: 'FontAwesome';
+  content: '\f183';
 }
 
-input[type='radio']:checked::after {
-  box-shadow: 0 0 5px 2px rgba(0,0,0,0.2);
-  color: rgba(41, 53, 134, 0.8);
-  transition: box-shadow 0.5s, color 0.5s;
+input[type='number'] {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  width: 40%;
+  color: white;
+  font-size: 20px;
+  font-family: inherit;
 }
 
-.table-content tr:active {
-  background-color: rgba(255,255,255,0.1);
+input[type='number']:focus {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+input[type=number]::-webkit-inner-spin-button::after:hover {
+  font-family: 'FontAwesome';
+  content: '\f0d8';
+  color: white;
+}
+
+input[type=number]::-webkit-outer-spin-button::after:hover {
+  font-family: 'FontAwesome';
+  content: '\f0d7 ';
+  color: white;
+}
+
+select {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
+option {
+  color: #007599;
+}
+
+.sort {
+  font-size: 20px;
+}
+
+.pages {
+  text-align: center;
+  margin-top: 16px;
+  max-width: 1200px;
+}
+
+.pages button {
+  min-width: 40px;
+  height: 40px;
+  margin: 0 8px 8px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.pages button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.active {
+  background-color: #52d3fad0;
+  color: white;
+  border: none;
+}
+
+i {
+  vertical-align: bottom;
 }
