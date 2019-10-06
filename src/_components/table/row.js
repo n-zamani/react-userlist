@@ -34,41 +34,6 @@ export default class Row extends Component {
         }
     }
 
-    // renderRow = (column) => {
-    //     switch(column.type) {
-    //         case 'bool':
-    //             return <input
-    //                         type="checkbox"
-    //                         name={column.name}
-    //                         checked={this.state[column.name]}
-    //                         onChange={this.changeHandler}
-    //                         placeholder={column.label}
-    //                     />
-    //         case 'list':
-    //             return <select name={column.name} onChange={this.changeHandler}>
-    //                     {column.options.map(option=><option key={option.value} value={option.value} selected={this.state.status === option.label ? true : false}>{option.label}</option>)}
-    //                 </select>
-    //         case 'number':
-    //             return <input
-    //                         type={column.type}
-    //                         name={column.name}
-    //                         value={this.state[column.name]}
-    //                         onChange={this.changeHandler}
-    //                         placeholder={column.label}
-    //                         min='0'
-    //                     />
-    //         default:
-    //             return <><input
-    //                         type={column.type}
-    //                         name={column.name}
-    //                         value={this.state[column.name]}
-    //                         onChange={this.changeHandler}
-    //                         placeholder={column.label}
-    //                         autoComplete='off'
-    //                     /><span></span></>
-    //     }
-    // }
-
     render() {
         const {row,onDelete,columns} = this.props;
         const {isEdit} = this.state
